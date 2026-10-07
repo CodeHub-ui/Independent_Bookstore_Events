@@ -1,5 +1,8 @@
 # Independent Bookstore Events Page
 
+## Live demo site  " independentbookstoreevents.netlify.app"
+
+
 ## Description
 A lightweight web page that replaces paper registers and Excel sheets for an independent bookstore. Staff can view, search and add events from a desktop or tablet, with no build tools or server.
 
