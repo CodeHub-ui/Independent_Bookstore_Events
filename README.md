@@ -48,12 +48,6 @@ Invalid fields get a red border and an inline message announced to screen reader
 ## Accessibility
 Semantic landmarks (`header`, `main`, `section`, `article`, `footer`, `form`), labels tied to inputs, ARIA labels and `aria-describedby`/`aria-invalid` for errors, live regions for results and notifications, full keyboard navigation with a skip link, visible focus outlines, and a logical heading hierarchy.
 
-## Analytics
-After each successful submission the console logs exactly:
-```text
-[Analytics] User interacted with Independent Bookstore Events Page
-```
-Nothing is logged when validation fails.
 
 ## Future Improvements
 - Local Storage persistence
