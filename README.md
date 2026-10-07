@@ -1,6 +1,6 @@
 # Independent Bookstore Events Page
 
-## Live demo site  " independentbookstoreevents.netlify.app"
+## Live demo site  "https://independentbookstoreevents.netlify.app/"
 
 
 ## Description
