@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse, search and add events for an independent bookstore.">
+  <title>Independent Bookstore Events</title>
+  <link rel="stylesheet" href="style.css">
+  <script> 
+    try { if (localStorage.getItem("bookstoreTheme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo" role="img" aria-label="Bookstore logo placeholder">B</div>
+      <div>
+        <h1>Independent Bookstore Events</h1>
+        <p class="subtitle">Plan readings, launches and workshops in one place.</p>
+      </div>
+      <div class="header-tools">
+        <time class="today" id="today-date" aria-label="Today's date"></time>
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Light Mode active. Switch to Dark Mode">
+          <span id="theme-icon" aria-hidden="true">&#9728;</span>
+          <span id="theme-label">Light Mode</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section aria-labelledby="search-heading" class="panel">
+      <h2 id="search-heading">Find an event</h2>
+      <label for="search" class="label">Search by title, author or category</label>
+      <input type="search" id="search" class="input" placeholder="e.g. poetry, Rao, launch"
+             autocomplete="off" aria-label="Search events by title, author or category"
+             aria-controls="events-grid">
+      <p id="results-status" class="hint" role="status" aria-live="polite"></p>
+    </section>
+
+    <section aria-labelledby="events-heading">
+      <h2 id="events-heading">Upcoming events</h2>
+      <div id="events-grid" class="grid" aria-busy="true"></div>
+    </section>
+
+    <section aria-labelledby="form-heading" class="panel">
+      <h2 id="form-heading">Add an event</h2>
+      <form id="event-form" novalidate aria-label="Add a new bookstore event">
+        <div class="form-grid">
+          <div class="field">
+            <label for="title" class="label">Event title</label>
+            <input id="title" name="title" class="input" type="text" maxlength="100"
+                   aria-describedby="title-error" aria-required="true">
+            <p class="error" id="title-error"></p>
+          </div>
+          <div class="field">
+            <label for="author" class="label">Author name</label>
+            <input id="author" name="author" class="input" type="text" maxlength="80"
+                   aria-describedby="author-error" aria-required="true">
+            <p class="error" id="author-error"></p>
+          </div>
+          <div class="field">
+            <label for="date" class="label">Date</label>
+            <input id="date" name="date" class="input" type="date"
+                   aria-describedby="date-error" aria-required="true">
+            <p class="error" id="date-error"></p>
+          </div>
+          <div class="field">
+            <label for="time" class="label">Time</label>
+            <input id="time" name="time" class="input" type="time"
+                   aria-describedby="time-error" aria-required="true">
+            <p class="error" id="time-error"></p>
+          </div>
+          <div class="field">
+            <label for="category" class="label">Category</label>
+            <select id="category" name="category" class="input" aria-describedby="category-error"
+                    aria-required="true"></select>
+            <p class="error" id="category-error"></p>
+          </div>
+          <div class="field">
+            <label for="seats" class="label">Available seats</label>
+            <input id="seats" name="seats" class="input" type="number" min="1" step="1"
+                   aria-describedby="seats-error" aria-required="true">
+            <p class="error" id="seats-error"></p>
+          </div>
+          <div class="field full">
+            <label for="description" class="label">Description</label>
+            <textarea id="description" name="description" class="input" rows="4" maxlength="300"
+                      aria-describedby="description-error" aria-required="true"></textarea>
+            <p class="error" id="description-error"></p>
+          </div>
+        </div>
+        <button type="submit" class="btn" aria-label="Add event to the list">Add event</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>&copy; Independent Bookstore Events. Built for staff on desktop and tablet.</p></div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
