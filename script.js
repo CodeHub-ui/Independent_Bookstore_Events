@@ -1,5 +1,4 @@
 'use strict';
-
 const CATEGORIES = [
   'Author Meet',
   'Book Launch',
@@ -8,7 +7,6 @@ const CATEGORIES = [
   'Writing Workshop',
   'Community Discussion'
 ];
-
 const SAMPLE_EVENTS = [
   {
     id: 'evt-001',
